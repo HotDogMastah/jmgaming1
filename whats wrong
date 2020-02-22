@@ -1,0 +1,90 @@
+# jmgaming1
+whats is wrong with this
+<?php
+
+namespace Hytlenz;
+
+use pocketmine\plugin\PluginBase;
+use pocketmine\command\{Command, CommandSender};
+use pocketmine\event\Listener;
+use pocketmine\entity\{Effect, EffectInstance, Entity};
+use pocketmine\{Player, Server};
+use pocketmine\utils\Config;
+
+use Hytlenz\forms_by_jojoe\{SimpleForm, CustomForm};
+
+class DonatorUI extends PluginBase implements Listener{
+    
+    public function onEnable()
+    {
+        $this->getLogger()->info("is Enabled");
+        $this->getServer()->getPluginManager()->registerEvents($this, $this);
+    }    
+
+    public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args): bool{
+        switch($cmd->getName()){
+        case 'test':
+            $This->openForm($sender);
+            break;
+        }
+            return true;
+    }
+    
+        public function openForm(Player $player) {
+        $form = new SimpleForm(function (Player $sender, $data){
+            $result = $data;
+            if ($result == null) {
+            }
+            switch ($result) {
+                    case 0:
+                        $sender->sendMessage("test");
+                        break;
+                    case 1:
+                    	$sender->sendMessage("test");
+                    	break;
+		            case 2:
+		                $sender->sendMessage("test");
+                        break;
+                    case 3:
+                        $sender->sendMessage("test");
+                        break;
+                    case 4:
+                    	$sender->sendMessage("test");
+                        break;
+                    case 5:
+                        $sender->sendMessage("test");
+                        break;
+                    case 6:
+                    	$sender->sendMessage("test");
+                        break;
+                    case 7:
+                    	$sender->sendMessage("test");
+                        break;
+                    case 8:
+                        $sender->sendMessage("test");
+                        break;
+                    case 9:
+                        $sender->sendMessage("test");
+                        break;
+                    case 10:
+                        $sender->sendMessage("test");
+                        break;
+            }
+        });
+        $form->setTitle("test");
+        $form->setContent("test ui");
+        $form->addButton("test");
+        $form->addButton("test");
+        $form->addButton("test");
+        $form->addButton("test");
+        $form->addButton("test");
+        $form->addButton("test");
+        $form->addButton("test");
+        $form->addButton("test");
+        $form->addButton("test");
+        $form->addButton("test");
+        $form->addButton("test");
+        $form->addButton("test");
+        $form->sendToPlayer($sender);     
+        }
+}
